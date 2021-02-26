@@ -1,6 +1,5 @@
 # MQTT
 ## 1. 简介
-简介原帖：https://blog.csdn.net/qq_28877125/article/details/78325003  
 &emsp;&emsp;MQTT（Message Queuing Telemetry Transport，消息队列遥测传输协议），是一种基于发布/订阅（publish/subscribe）模式的"轻量级"通讯协议，该协议构建于TCP/IP协议上，由IBM在1999年发布。MQTT最大优点在于，可以以极少的代码和有限的带宽，为连接远程设备提供实时可靠的消息服务。作为一种低开销、低带宽占用的即时通讯协议，使其在物联网、小型设备、移动应用等方面有较广泛的应用。  
 &emsp;&emsp;MQTT是一个基于客户端-服务器的消息发布/订阅传输协议。MQTT协议是轻量、简单、开放和易于实现的，这些特点使它适用范围非常广泛。在很多情况下，包括受限的环境中，如：机器与机器（M2M）通信和物联网（IoT）。其在，通过卫星链路通信传感器、偶尔拨号的医疗设备、智能家居、及一些小型化设备中已广泛使用。  
 ![](https://github.com/lk6678979/image/blob/master/mtqq-1.jpg)  
@@ -55,3 +54,26 @@ Last Will：即遗言机制，用于通知同一主题下的其他设备发送�
 
 Testament：遗嘱机制，功能类似于Last Will。
 
+## 2. MQTT协议数据包结构
+在MQTT协议中，一个MQTT数据包由：固定头（Fixed header）、可变头（Variable header）、消息体（payload）三部分构成。MQTT数据包结构如下：  
+
+（1）固定头（Fixed header）。存在于所有MQTT数据包中，表示数据包类型及数据包的分组类标识。  
+
+（2）可变头（Variable header）。存在于部分MQTT数据包中，数据包类型决定了可变头是否存在及其具体内容。  
+
+（3）消息体（Payload）。存在于部分MQTT数据包中，表示客户端收到的具体内容。  
+## 2.1. MQTT固定头
+固定头存在于所有MQTT数据包中，固定占2个字节  
+第一个节前4位表示报文类型后四位表示报文的标志  
+第二个字节表示剩余报文的长度固定占2个字节  
+## 报文类型：
+![](https://github.com/lk6678979/image/blob/master/mtqq-2.jpg)  
+
+## 2.1.1 MQTT数据包类型
+
+
+
+
+
+参考帖子：
+简介：https://blog.csdn.net/qq_28877125/article/details/78325003  
