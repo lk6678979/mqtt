@@ -68,7 +68,7 @@ Testament：遗嘱机制，功能类似于Last Will。
 第二个字节表示剩余报文的长度固定占2个字节  
 ## 报文类型：
 ![](https://github.com/lk6678979/image/blob/master/mtqq-2.jpg)  
-
+ 
 ## 2.1.1 MQTT数据包类型
 
 
