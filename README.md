@@ -68,12 +68,19 @@ Testament：遗嘱机制，功能类似于Last Will。
 第二个字节表示剩余报文的长度固定占2个字节  
 ## 报文类型：
 ![](https://github.com/lk6678979/image/blob/master/mtqq-2.jpg)  
- 
-## 2.1.1 MQTT数据包类型
-
-
-
+ ## 报文标志：
+ ![](https://github.com/lk6678979/image/blob/master/mtqq-3.jpg)  
+## 2.2. MQTT可变头
+MQTT数据包中包含一个可变头，它驻位于固定的头和负载之间。可变头的内容因数据包类型而不同，较常的应用是作为包的标识：  
+很多类型数据包中都包括一个2字节的数据包标识字段，这些类型的包有：PUBLISH (QoS > 0)、PUBACK、PUBREC、PUBREL、PUBCOMP、SUBSCRIBE、SUBACK、UNSUBSCRIBE、UNSUBACK。  
+## 2.3. Payload消息体
+Payload消息体位MQTT数据包的第三部分，包含CONNECT、SUBSCRIBE、SUBACK、UNSUBSCRIBE四种类型的消息：  
+（1）CONNECT，消息体内容主要是：客户端的ClientID、订阅的Topic、Message以及用户名和密码。  
+（2）SUBSCRIBE，消息体内容是一系列的要订阅的主题以及QoS。  
+（3）SUBACK，消息体内容是服务器对于SUBSCRIBE所申请的主题及QoS进行确认和回复。  
+（4）UNSUBSCRIBE，消息体内容是要订阅的主题。  
 
 
 参考帖子：
 简介：https://blog.csdn.net/qq_28877125/article/details/78325003  
+固定头：https://www.cnblogs.com/AngeLeyes/p/12894958.html
